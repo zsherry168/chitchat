@@ -1,0 +1,31 @@
+{% extends 'base.html' %} 
+
+{% block head %}
+{% endblock %}
+
+{% block content %}
+<center class="message-box">
+  <div class="welcome">
+    <h1>Welcome to ChitChat!</h1>
+    <p style="margin-top: 20px;">ChitChat is a simple online messaging service that allows endless communication 
+      with other fellow ChitChatters around the world. Enter a display name below and 
+      begin chatting today!
+    </p>
+    <form method="post" action="/chat">
+      <div style="margin-top: 30px; margin-bottom: 40px;">
+        <label style="margin-right: 10px;">Name:</label>
+        <input
+          type="text"
+          name="name"
+          value="{{name}}"
+        />
+        <input type="submit" name="join" style="margin-left: 10px;" value="Enter">
+        {% if error %}
+        <p style="color: red;">{{ error }}</p>
+        {% endif %}
+      </div>
+    </form>
+    <img src="../static/bunny.png" class="bunny">
+  </div>
+</center>
+{% endblock %}
