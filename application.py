@@ -41,6 +41,9 @@ def chatroomEntry():
 
         if join != False and not code:
             return render_template("chatroomEntry.html", error="Please enter a room code.", code=code, name=name)
+        
+        if create != False and room in rooms:
+            return render_template("chatroomEntry.html", error="Room already exists. Click 'Join a Channel' to join. ", code=code, name=name)
 
         if create != False and code not in rooms:
             rooms[room] = {"members": 0, "messages": []}
