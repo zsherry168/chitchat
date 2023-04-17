@@ -94,6 +94,7 @@ def viewChannel():
 
         return render_template("room.html", code=room, rooms=rooms, messages=rooms[room]["messages"])
 
+# Working with the sockets
 @socketio.on("message")
 def message(data):
     room = session.get("room")

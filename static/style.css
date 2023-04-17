@@ -48,12 +48,17 @@ button {
   width: 100%;
 }
 
-.message-box {
+.message-box, .channel-box  {
   border-color: rgb(22, 82, 26);
   border-width: 2px;
   border-style: solid;
   border-radius: 10px;
   background-color: whitesmoke;
+  height: 40vh;
+  display: flex;
+}
+
+.message-box {
   height: 80vh;
   display: flex;
   flex-direction: column;
